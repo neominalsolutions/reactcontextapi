@@ -7,9 +7,9 @@ import AppFooter from './AppFooter'
 function Layout() {
 
     const menuItems:NavbarModel[] = [{
-        text:'CustomHook Sample',
+        text:'CustomHook',
         url:'/customHook'
-    }, { text:'DeboucingSample', url:'/debouncing'}, {text:'reactFormsHook', url:'/reactFormsHook'}, {text:'useReducer Sample', url:'/useReducer' }, {text:'useContext Sample', url:'/useContext'}, {text:'fakeLogin', url:'/auth/login'}]
+    }, { text:'Deboucing', url:'/debouncing'}, {text:'FormsHook', url:'/reactFormsHook'}, {text:'useReducer', url:'/useReducer' }, {text:'Ürünlerimiz', url:'/products'}, {text:'fakeLogin', url:'/auth/login'},{text:'Sepet Detay', url:'/cartSummary'}]
 
   return (
     <>
