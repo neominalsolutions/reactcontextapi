@@ -43,7 +43,6 @@ const {
   // form değerlerini takibe alma izleme
   const username =  watch('username') || '';
   console.log('username', username);
-
   console.log('isDirty', isDirty);
 
 //   if(username.length > 3) {
@@ -54,7 +53,6 @@ const {
     console.log('form-value', data);
   }
   
-
   return (
     <>
     <form method='post' onSubmit={handleSubmit(onFormSubmit)}>
@@ -62,7 +60,6 @@ const {
       <span>{errors.username?.message}</span>
       <br></br>
       <input type="password" {... register("password")} />
-
       {/* <input type="password" {... register("password",
       {
         required:{value:true,message:'password alanı boş geçilemez'},
