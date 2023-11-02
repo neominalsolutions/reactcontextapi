@@ -20,8 +20,6 @@ function ReactFormsHookSample() {
 
     // },[]);
 
-
-
 const schema = yup.object({
     password:yup.string(),
     confirmed:yup.boolean(),
@@ -80,6 +78,7 @@ const {
        */}
       <br></br>
       <input type="number" {... register("age")} />
+         <span>{errors.age?.message}</span>
       <br></br>
       <input type="checkbox" {... register("confirmed")} /> Is Confirmed
       <br></br>
