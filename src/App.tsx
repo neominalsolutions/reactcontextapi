@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Outlet, useRoutes } from 'react-router-dom';
-import debouncingSample from './pages/debouncing/debouncingSample';
+import DebouncingSample from './pages/debouncing/debouncingSample';
 import customHookSample from './pages/customHook/customHookSample';
 import useReducerSample from './pages/useReducer/useReducerSample';
 import useContextSample from './pages/useContext/useContextSample';
@@ -17,7 +17,7 @@ function App() {
       Component: Layout,
       children: [{
         path: '/debouncing',
-        Component: debouncingSample
+        Component: DebouncingSample
       }, {
         path: '/customHook',
         Component: customHookSample
