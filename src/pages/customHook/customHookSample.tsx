@@ -1,8 +1,18 @@
 import React from 'react'
+import UseAuthenticatedUser, { AuthenticatedUser } from './UseAuthenticatedUser'
 
 function customHookSample() {
+
+  const user:AuthenticatedUser | null =  UseAuthenticatedUser();
+
+  // const user = localStorage.getItem('accessToken');
+
   return (
-    <div>customHookSample</div>
+    <>
+     sub: {user?.userId}
+     <br></br>
+     name: {user?.username}
+    </>
   )
 }
 

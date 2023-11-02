@@ -8,6 +8,7 @@ import useReducerSample from './pages/useReducer/useReducerSample';
 import useContextSample from './pages/useContext/useContextSample';
 import reactFormsHookSample from './pages/reactFormsHook/reactFormsHookSample';
 import Layout from './layouts/Layout';
+import FakeLogin from './pages/customHook/FakeLogin';
 
 function App() {
 
@@ -30,11 +31,12 @@ function App() {
       }, {
         path: '/reactFormsHook',
         Component: reactFormsHookSample
-      }]
+      }
+    ]
     },
     {
       path: '/auth/login',
-      element: <>Auth Login</>
+      Component: FakeLogin
     },
     {
       path: '/admin',

@@ -9,7 +9,7 @@ function Layout() {
     const menuItems:NavbarModel[] = [{
         text:'CustomHook Sample',
         url:'/customHook'
-    }, { text:'DeboucingSample', url:'/debouncing'}, {text:'reactFormsHook', url:'/reactFormsHook'}, {text:'useReducer Sample', url:'/useReducer' }, {text:'useContext Sample', url:'/useContext'}]
+    }, { text:'DeboucingSample', url:'/debouncing'}, {text:'reactFormsHook', url:'/reactFormsHook'}, {text:'useReducer Sample', url:'/useReducer' }, {text:'useContext Sample', url:'/useContext'}, {text:'fakeLogin', url:'/auth/login'}]
 
   return (
     <>
