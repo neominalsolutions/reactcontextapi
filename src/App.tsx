@@ -15,7 +15,6 @@ import {
 	CartItem,
 } from './pages/useContext/CartStore';
 import ReactFormsHookSample from './pages/reactFormsHook/ReactFormsHookSample';
-import ReactFormsHookTest from './pages/test/test';
 
 function App() {
 	const loadFromApiPromise = new Promise((resolve, reject) => {
