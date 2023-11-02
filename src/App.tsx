@@ -5,13 +5,12 @@ import { Outlet, useRoutes } from 'react-router-dom';
 import DebouncingSample from './pages/debouncing/debouncingSample';
 import customHookSample from './pages/customHook/customHookSample';
 import useReducerSample from './pages/useReducer/useReducerSample';
-import useContextSample from './pages/useContext/ProductListSample';
-import reactFormsHookSample from './pages/reactFormsHook/reactFormsHookSample';
 import Layout from './layouts/Layout';
 import FakeLogin from './pages/customHook/FakeLogin';
 import ProductListSample from './pages/useContext/ProductListSample';
 import CartSummarySample from './pages/useContext/CartSummarySample';
 import { CartContext, CartContextType, CartItem } from './pages/useContext/CartStore';
+import ReactFormsHookSample from './pages/reactFormsHook/ReactFormsHookSample';
 
 function App() {
 
@@ -62,7 +61,7 @@ function App() {
       }, 
       {
         path: '/reactFormsHook',
-        Component: reactFormsHookSample
+        Component: ReactFormsHookSample
       },
       {
         path:'/products',
