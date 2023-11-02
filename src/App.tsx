@@ -1,29 +1,49 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { useRoutes } from 'react-router-dom';
+import { Outlet, useRoutes } from 'react-router-dom';
+import debouncingSample from './pages/debouncing/debouncingSample';
+import customHookSample from './pages/customHook/customHookSample';
+import useReducerSample from './pages/useReducer/useReducerSample';
+import useContextSample from './pages/useContext/useContextSample';
+import reactFormsHookSample from './pages/reactFormsHook/reactFormsHookSample';
+import Layout from './layouts/Layout';
 
 function App() {
 
   const routes = useRoutes([
     {
       path: '',
-      Component: null,
+      Component: Layout,
       children: [{
-        path: '/deboucing',
-        Component: null
+        path: '/debouncing',
+        Component: debouncingSample
       }, {
         path: '/customHook',
-        Component: null
+        Component: customHookSample
       }, {
         path: '/useReducer',
-        Component: null
+        Component: useReducerSample
       }, {
         path: '/useContext',
-        Component: null
+        Component: useContextSample
       }, {
         path: '/reactFormsHook',
-        Component: null
+        Component: reactFormsHookSample
+      }]
+    },
+    {
+      path: '/auth/login',
+      element: <>Auth Login</>
+    },
+    {
+      path: '/admin',
+      element: <>
+        <h1>Admin Layout</h1>
+        <Outlet /></>,
+      children:[{
+        path:'users',
+        element:<>Users Page</>
       }]
     }
   ]);
