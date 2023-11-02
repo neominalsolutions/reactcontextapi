@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import debounce from './Debouncing';
 
 function DebouncingSample() {
@@ -10,7 +10,10 @@ function DebouncingSample() {
 
   const loadData = async() => {
     try {
-        let response = await axios.get('https://services.odata.org/northwind/northwind.svc/Products');
+
+        let searchText = search || '';
+
+        let response = await axios.get(`https://services.odata.org/northwind/northwind.svc/Products?$filter=substringof('${searchText}',ProductName)&$format=json`);
         setProducts(response.data.value);
         console.log('data', response.data.value);
     } catch (error) {
@@ -18,16 +21,27 @@ function DebouncingSample() {
   }
 
   useEffect(() => {
+    console.log('sayfanın ilk açılışı')
     loadData(); // bunu tekrar çekmeyeceğiz.
-  }, [])
+  }, []);
+
+  // server side arama işlemi için yazıldı. tüm data seti çekmediğimiz durumlarda bunu kullanıcaz.
+  useEffect(() => {
+
+    // 2. bir network isteği oluşutarak server side arama işlemi yap.
+
+
+      console.log('2 ve daha sonraki aramalar')
+      loadData();
+    
+
+  }, [search])
 
     let filteredResult:any[] = [];
   
   if(products !== undefined) {
     filteredResult = products.filter(x=> new RegExp(search,'i').test(x.ProductName));
   }
-
-
 
   // filteredResult arama sonrası sonuçtan dönen  result
 
@@ -41,7 +55,7 @@ function DebouncingSample() {
     // inputtaki değeri alıp search değerine set et. sayfa yendiden render olacağı için filteredResult yeni değer üzerinden değişecektir. 
   }
 
-  const searchDebounceHandler = debounce(onSearch,300);
+  const searchDebounceHandler = useMemo(() => debounce(onSearch,300),[]);
  
   return (
     <>
