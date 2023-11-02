@@ -4,7 +4,6 @@ import UseAuthenticatedUser, { AuthenticatedUser } from './UseAuthenticatedUser'
 function customHookSample() {
 
   const user:AuthenticatedUser | null =  UseAuthenticatedUser();
-
   // const user = localStorage.getItem('accessToken');
 
   return (
